@@ -1,3 +1,9 @@
+[25-Dec-2019]
+* [SH] User services implement
+
+[25-Dec-2019]
+* [SH] Configure project with Hibernate, Spring-data-jpa
+
 [22-Dec-2019]
 * [SH] Configure project with Spring WebMVC
 

@@ -11,12 +11,11 @@ public class DispathcherServletConfig extends AbstractAnnotationConfigDispatcher
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return null;
+		return new Class[] { PersistanceJPAConfig.class };
 	}
 
 	@Override
 	protected String[] getServletMappings() {
-		return new String[] { "/home", };
+		return new String[] { "/" };
 	}
-
 }

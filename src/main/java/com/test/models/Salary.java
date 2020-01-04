@@ -1,0 +1,186 @@
+package com.test.models;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity(name = "salary")
+public class Salary {
+
+	@Id
+	private int id;
+
+	@Column
+	private Integer department_id;
+
+	@Column
+	private String grade;
+
+	@Column
+	private Float basic_salary;
+
+	@Column
+	private Float house_rent;
+
+	@Column
+	private Float ta;
+
+	@Column
+	private Float da;
+
+	@Column
+	private Float medical_allownce;
+
+	@Column
+	private Float provident_fund;
+
+	@Column
+	private Float others;
+
+	@Column
+	private Integer created_by;
+
+	@Column
+	private Date created_date;
+
+	@Column
+	private Integer modified_by;
+
+	@Column
+	private Date modified_date;
+
+	@Column
+	private String _key;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Integer getDepartment_id() {
+		return department_id;
+	}
+
+	public void setDepartment_id(Integer department_id) {
+		this.department_id = department_id;
+	}
+
+	public String getGrade() {
+		return grade;
+	}
+
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+
+	public Float getBasic_salary() {
+		return basic_salary;
+	}
+
+	public void setBasic_salary(Float basic_salary) {
+		this.basic_salary = basic_salary;
+	}
+
+	public Float getHouse_rent() {
+		return house_rent;
+	}
+
+	public void setHouse_rent(Float house_rent) {
+		this.house_rent = house_rent;
+	}
+
+	public Float getTa() {
+		return ta;
+	}
+
+	public void setTa(Float ta) {
+		this.ta = ta;
+	}
+
+	public Float getDa() {
+		return da;
+	}
+
+	public void setDa(Float da) {
+		this.da = da;
+	}
+
+	public Float getMedical_allownce() {
+		return medical_allownce;
+	}
+
+	public void setMedical_allownce(Float medical_allownce) {
+		this.medical_allownce = medical_allownce;
+	}
+
+	public Float getProvident_fund() {
+		return provident_fund;
+	}
+
+	public void setProvident_fund(Float provident_fund) {
+		this.provident_fund = provident_fund;
+	}
+
+	public Float getOthers() {
+		return others;
+	}
+
+	public void setOthers(Float others) {
+		this.others = others;
+	}
+
+	public Integer getCreated_by() {
+		return created_by;
+	}
+
+	public void setCreated_by(Integer created_by) {
+		this.created_by = created_by;
+	}
+
+	public Date getCreated_date() {
+		return created_date;
+	}
+
+	public void setCreated_date(Date created_date) {
+		this.created_date = created_date;
+	}
+
+	public Integer getModified_by() {
+		return modified_by;
+	}
+
+	public void setModified_by(Integer modified_by) {
+		this.modified_by = modified_by;
+	}
+
+	public Date getModified_date() {
+		return modified_date;
+	}
+
+	public void setModified_date(Date modified_date) {
+		this.modified_date = modified_date;
+	}
+
+	public String get_key() {
+		return _key;
+	}
+
+	public void set_key(String _key) {
+		this._key = _key;
+	}
+
+	@Override
+	public String toString() {
+		return "Salary [id=" + id + ", department_id=" + department_id + ", grade=" + grade + ", basic_salary="
+				+ basic_salary + ", house_rent=" + house_rent + ", ta=" + ta + ", da=" + da + ", medical_allownce="
+				+ medical_allownce + ", provident_fund=" + provident_fund + ", others=" + others + ", created_by="
+				+ created_by + ", created_date=" + created_date + ", modified_by=" + modified_by + ", modified_date="
+				+ modified_date + ", _key=" + _key + "]";
+	}
+
+}

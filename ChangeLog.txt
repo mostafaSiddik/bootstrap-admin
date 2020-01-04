@@ -1,3 +1,9 @@
+[31-Dec-2019]
+* [SH] Added services and service implements
+
+[31-Dec-2019]
+* [SH] Added Entities, Added Repositories
+
 [25-Dec-2019]
 * [SH] User services implement
 

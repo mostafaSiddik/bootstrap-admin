@@ -102,7 +102,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		    if(status != "success") 
 			    return false;
 		    if(data.status == "success") {
-				window.location.href = "/home";	
+				window.location.href = "/bootstrap-admin/home";
 			} else {
 				showErrorMessage(data.message);
 			}

@@ -9,9 +9,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-
-import com.test.services.UserService;
-import com.test.servicesImpl.UserServiceImpl;
+import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
@@ -29,14 +27,10 @@ public class MvcConfig implements WebMvcConfigurer {
 	@Bean
 	public ViewResolver internalResourceViewResolver() {
 		InternalResourceViewResolver bean = new InternalResourceViewResolver();
+		bean.setViewClass(JstlView.class);
 		bean.setPrefix("/WEB-INF/view/");
 		bean.setSuffix(".jsp");
 		return bean;
-	}
-
-	@Bean
-	public UserService userService() {
-		return new UserServiceImpl();
 	}
 
 }

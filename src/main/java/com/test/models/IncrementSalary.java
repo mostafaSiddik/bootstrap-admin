@@ -18,10 +18,10 @@ public class IncrementSalary {
 	private Integer salary_id;
 
 	@Column
-	private Float increment_amount;
+	private Double increment_amount;
 
 	@Column
-	private Float total_salary;
+	private Double total_salary;
 
 	@Column
 	private String comments;
@@ -68,19 +68,19 @@ public class IncrementSalary {
 		this.salary_id = salary_id;
 	}
 
-	public Float getIncrement_amount() {
+	public Double getIncrement_amount() {
 		return increment_amount;
 	}
 
-	public void setIncrement_amount(Float increment_amount) {
+	public void setIncrement_amount(Double increment_amount) {
 		this.increment_amount = increment_amount;
 	}
 
-	public Float getTotal_salary() {
+	public Double getTotal_salary() {
 		return total_salary;
 	}
 
-	public void setTotal_salary(Float total_salary) {
+	public void setTotal_salary(Double total_salary) {
 		this.total_salary = total_salary;
 	}
 

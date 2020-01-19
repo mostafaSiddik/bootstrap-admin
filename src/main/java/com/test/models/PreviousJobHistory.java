@@ -22,6 +22,9 @@ public class PreviousJobHistory {
 	private String company_address;
 
 	@Column
+	private String company_info;
+
+	@Column
 	private String department;
 
 	@Column
@@ -75,6 +78,14 @@ public class PreviousJobHistory {
 
 	public void setCompany_address(String company_address) {
 		this.company_address = company_address;
+	}
+
+	public String getCompany_info() {
+		return company_info;
+	}
+
+	public void setCompany_info(String company_info) {
+		this.company_info = company_info;
 	}
 
 	public String getDepartment() {
@@ -144,10 +155,10 @@ public class PreviousJobHistory {
 	@Override
 	public String toString() {
 		return "PreviousJobHistory [id=" + id + ", employee_id=" + employee_id + ", company_name=" + company_name
-				+ ", company_address=" + company_address + ", department=" + department + ", responsibilities="
-				+ responsibilities + ", comments=" + comments + ", created_by=" + created_by + ", created_date="
-				+ created_date + ", modified_by=" + modified_by + ", modified_date=" + modified_date + ", _key=" + _key
-				+ "]";
+				+ ", company_address=" + company_address + ", company_info=" + company_info + ", department="
+				+ department + ", responsibilities=" + responsibilities + ", comments=" + comments + ", created_by="
+				+ created_by + ", created_date=" + created_date + ", modified_by=" + modified_by + ", modified_date="
+				+ modified_date + ", _key=" + _key + "]";
 	}
 
 }

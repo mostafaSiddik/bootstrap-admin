@@ -15,6 +15,12 @@ public class StockDelivery {
 	private int id;
 
 	@Column
+	private Integer institute_id;
+
+	@Column
+	private Integer company_id;
+
+	@Column
 	private Integer job_order_id;
 
 	@Column
@@ -66,6 +72,22 @@ public class StockDelivery {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public Integer getInstitute_id() {
+		return institute_id;
+	}
+
+	public void setInstitute_id(Integer institute_id) {
+		this.institute_id = institute_id;
+	}
+
+	public Integer getCompany_id() {
+		return company_id;
+	}
+
+	public void setCompany_id(Integer company_id) {
+		this.company_id = company_id;
 	}
 
 	public Integer getJob_order_id() {
@@ -190,12 +212,12 @@ public class StockDelivery {
 
 	@Override
 	public String toString() {
-		return "StockDelivery [id=" + id + ", job_order_id=" + job_order_id + ", sample_order_id=" + sample_order_id
-				+ ", issue_date=" + issue_date + ", confirm_date=" + confirm_date + ", delivered_by=" + delivered_by
-				+ ", received_by=" + received_by + ", quantity=" + quantity + ", total_amount=" + total_amount
-				+ ", status=" + status + ", created_by=" + created_by + ", created_date=" + created_date
-				+ ", modified_by=" + modified_by + ", modified_date=" + modified_date + ", is_deleted=" + is_deleted
-				+ ", _key=" + _key + "]";
+		return "StockDelivery [id=" + id + ", institute_id=" + institute_id + ", company_id=" + company_id
+				+ ", job_order_id=" + job_order_id + ", sample_order_id=" + sample_order_id + ", issue_date="
+				+ issue_date + ", confirm_date=" + confirm_date + ", delivered_by=" + delivered_by + ", received_by="
+				+ received_by + ", quantity=" + quantity + ", total_amount=" + total_amount + ", status=" + status
+				+ ", created_by=" + created_by + ", created_date=" + created_date + ", modified_by=" + modified_by
+				+ ", modified_date=" + modified_date + ", is_deleted=" + is_deleted + ", _key=" + _key + "]";
 	}
 
 	public enum Status {

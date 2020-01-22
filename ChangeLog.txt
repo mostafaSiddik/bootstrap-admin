@@ -1,3 +1,6 @@
+[22-Jan-2020]
+* [SH] Added view,services, service impls and controller for Product Type, and also make it workable. 
+
 [19-Jan-2020]
 * [SH] Integrated Thymeleaf template engine.
 

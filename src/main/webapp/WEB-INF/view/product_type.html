@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<title>Product type</title>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet"
+	th:href="@{/resources/plugins/fontawesome-free/css/all.min.css}" />
+<!-- Theme style -->
+<link rel="stylesheet" th:href="@{/resources/css/adminlte.min.css}" />
+<!-- Google Font: Source Sans Pro -->
+<link
+	th:href="@{https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700}"
+	rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+	<div class="wrapper">
+		<!-- Navbar -->
+		<nav
+			class="main-header navbar navbar-expand navbar-white navbar-light">
+			<!-- Left navbar links -->
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" data-widget="pushmenu"
+					href="#"><i class="fas fa-bars"></i></a></li>
+				<li class="nav-item d-none d-sm-inline-block"><a
+					href="../../index3.html" class="nav-link">Home</a></li>
+				<li class="nav-item d-none d-sm-inline-block"><a href="#"
+					class="nav-link">Contact</a></li>
+			</ul>
+
+			<!-- SEARCH FORM -->
+			<form class="form-inline ml-3">
+				<div class="input-group input-group-sm">
+					<input class="form-control form-control-navbar" type="search"
+						placeholder="Search" aria-label="Search">
+					<div class="input-group-append">
+						<button class="btn btn-navbar" type="submit">
+							<i class="fas fa-search"></i>
+						</button>
+					</div>
+				</div>
+			</form>
+
+			<!-- Right navbar links -->
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item"><a class="nav-link"
+					data-widget="control-sidebar" data-slide="true" href="#"> <i
+						class="fas fa-th-large"></i>
+				</a></li>
+			</ul>
+		</nav>
+		<!-- /.navbar -->
+
+		<!-- Main Sidebar Container -->
+		<aside class="main-sidebar sidebar-dark-primary elevation-4">
+			<!-- Sidebar -->
+			<div class="sidebar">
+				<!-- Sidebar Menu -->
+				<nav class="mt-2">
+					<ul class="nav nav-pills nav-sidebar flex-column"
+						data-widget="treeview" role="menu" data-accordion="false">
+						<!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+						<li class="nav-item has-treeview"><a href="#"
+							class="nav-link"> <i class="nav-icon fas fa-tachometer-alt"></i>
+								<p>
+									Dashboard <i class="right fas fa-angle-left"></i>
+								</p>
+						</a></li>
+					</ul>
+				</nav>
+				<!-- /.sidebar-menu -->
+			</div>
+			<!-- /.sidebar -->
+		</aside>
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Main content -->
+			<section class="content">
+				<div class="container-fluid">
+					<div class="col-md-12">
+						<!-- general form elements -->
+						<div class="card card-primary">
+							<div class="card-header">
+								<h3 class="card-title">New product type</h3>
+							</div>
+							<div class="card-body">
+								<!-- form start -->
+								<form role="form" th:object="${product_type}" th:action="@{/producttype}" method="post">
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="form-group">
+												<label for="name">Product type name</label>
+												<input type="text" class="form-control" id="name" th:field="*{name}" placeholder="Enter product type name">
+											</div>
+											<div class="form-group">
+												<label for="description">Description</label>
+												<textarea class="form-control" id="description" placeholder="Enter description"></textarea>
+											</div>
+										</div>
+									</div>
+									<div class="card-footer">
+										<button type="submit" class="btn btn-primary">Save</button>
+										<input class="btn btn-warning" type="reset">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<!-- /.col mod -->
+				</div>
+			</section>
+			<!-- /.content -->
+		</div>
+		<!-- /.content-wrapper -->
+		<footer class="main-footer">
+			<div class="float-right d-none d-sm-block">
+				<b>Version</b> 3.0.1
+			</div>
+			<strong>Copyright &copy; 2014-2019 <a
+				href="http://adminlte.io">AdminLTE.io</a>.
+			</strong> All rights reserved.
+		</footer>
+
+		<!-- Control Sidebar -->
+		<aside class="control-sidebar control-sidebar-dark">
+			<!-- Control sidebar content goes here -->
+		</aside>
+		<!-- /.control-sidebar -->
+	</div>
+	<!-- ./wrapper -->
+
+	<!-- REQUIRED SCRIPTS -->
+
+	<!-- jQuery -->
+	<script th:src="@{/resources/plugins/jquery/jquery.min.js}" /></script>
+	<!-- Bootstrap 4 -->
+	<script
+		th:src="@{/resources/plugins/bootstrap/js/bootstrap.bundle.min.js}" /></script>
+	<!-- AdminLTE App -->
+	<script th:src="@{/resources/js/adminlte.min.js}" /></script>
+</body>
+</html>

@@ -32,7 +32,6 @@ public class PersistanceJPAConfig {
 	 * dataSourceLookup.getDataSource("jdbc/TestDB"); return dataSource; }
 	 */
 
-	
 	@Bean
 	public DataSource dataSource() {
 		final BasicDataSource dataSource = new BasicDataSource();

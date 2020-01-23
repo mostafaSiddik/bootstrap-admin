@@ -109,7 +109,7 @@
 								<div class="row">
 									<div class="col-sm-12">
 										<div class="form-group" align="right">
-											<button type="button" class="btn btn-sm btn-danger">Delete selected items</button>
+											<button type="button" id="delete_selected_items" th:uri="@{/producttype/delete}" class="btn btn-sm btn-danger">Delete selected items</button>
 										</div>
 									</div>
 								</div>
@@ -121,7 +121,7 @@
 													<th>Name</th>
 													<th>Description</th>
 													<th>Action</th>
-													<th><input type="checkbox"></th>
+													<th><input type="checkbox" class="all_item_ckbx"></th>
 												</tr>
 											</thead>
 											<tbody>
@@ -134,7 +134,7 @@
 															<a type="button" class="btn btn-sm btn-warning" th:href="@{${'/producttype/' + product_type.id}}">Edit</a>
 														</div>
 													</td>
-													<td><input type="checkbox"></td>
+													<td><input type="checkbox" class="item_ckbx" th:itemId="${product_type.id}"></td>
 												</tr>
 											</tbody>
 											<tfoot>
@@ -186,6 +186,8 @@
 	<script th:src="@{/resources/plugins/datatables-bs4/js/dataTables.bootstrap4.js}"></script>
 	<!-- AdminLTE App -->
 	<script th:src="@{/resources/js/adminlte.min.js}" /></script>
+	<!-- Legend Scripts -->
+	<script th:src="@{/resources/js/legend.script.js}" /></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#example1").DataTable();

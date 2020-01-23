@@ -23,11 +23,37 @@ public class ProductTypeServiceImpl implements ProductTypeService {
 		productType.setCreated_by(0000);
 		productType.setCreated_date(getCurrentDate());
 		productType.setIs_deleted(false);
+
 		return productTypeRepository.save(productType);
 	}
 
-	public ProductType updateProductType(ProductType productType) {
-		return productTypeRepository.save(productType);
+	public ProductType updateProductType(Integer id, ProductType productType) {
+		ProductType prdType = findProductType(id);
+
+		prdType.setName(productType.getName());
+		prdType.setModified_by(0000);
+		prdType.setModified_date(getCurrentDate());
+		prdType.setIs_deleted(false);
+
+		return productTypeRepository.save(prdType);
+	}
+
+	public boolean deleteProductTypes(List<Integer> productTypeIds) {
+		try {
+			productTypeIds.stream().forEach(id -> {
+				ProductType productType = findProductType(id);
+
+				productType.setModified_by(0000);
+				productType.setModified_date(getCurrentDate());
+				productType.setIs_deleted(true);
+
+				productTypeRepository.save(productType);
+			});
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return false;
+		}
+		return true;
 	}
 
 	public String getProductTypeName(Integer id) {
@@ -38,8 +64,10 @@ public class ProductTypeServiceImpl implements ProductTypeService {
 		return productTypeRepository.getAllProductTypeName();
 	}
 
-	public Optional<ProductType> findProductType(Integer id) {
-		return productTypeRepository.findById(id);
+	public ProductType findProductType(Integer id) {
+		Optional<ProductType> productType = productTypeRepository.findById(id);
+
+		return productType.isPresent() ? productType.get() : null;
 	}
 
 	public List<ProductType> findAllProductType() {
@@ -50,4 +78,5 @@ public class ProductTypeServiceImpl implements ProductTypeService {
 	private Date getCurrentDate() {
 		return new Date();
 	}
+
 }

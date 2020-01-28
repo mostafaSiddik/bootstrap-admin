@@ -1,8 +1,9 @@
 package com.test.services.impl;
 
-import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -31,6 +32,8 @@ public class ProductTypeServiceImpl implements ProductTypeService {
 		ProductType prdType = findProductType(id);
 
 		prdType.setName(productType.getName());
+		prdType.setCode(productType.getCode());
+		prdType.setDescription(productType.getDescription());
 		prdType.setModified_by(0000);
 		prdType.setModified_date(getCurrentDate());
 		prdType.setIs_deleted(false);
@@ -60,7 +63,7 @@ public class ProductTypeServiceImpl implements ProductTypeService {
 		return productTypeRepository.getProductTypeName(id);
 	}
 
-	public ArrayList<String> getAllProductTypeName() {
+	public List<String> getAllProductTypeName() {
 		return productTypeRepository.getAllProductTypeName();
 	}
 
@@ -72,11 +75,15 @@ public class ProductTypeServiceImpl implements ProductTypeService {
 
 	public List<ProductType> findAllProductType() {
 		return productTypeRepository.findAll().stream().filter(productType -> !productType.isIs_deleted())
-				.collect(Collectors.toList());
+				.sorted(Comparator.comparing(ProductType::getName)).collect(Collectors.toList());
+	}
+
+	@Override
+	public Map<Integer, String> getNameMapWithIdFromProductTypeList(List<ProductType> productTypes) {
+		return productTypes.stream().collect(Collectors.toMap(ProductType::getId, ProductType::getName));
 	}
 
 	private Date getCurrentDate() {
 		return new Date();
 	}
-
 }

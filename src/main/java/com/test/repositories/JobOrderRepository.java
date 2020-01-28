@@ -1,5 +1,7 @@
 package com.test.repositories;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -9,8 +11,10 @@ import com.test.models.JobOrder;
 
 @Repository
 public interface JobOrderRepository extends JpaRepository<JobOrder, Integer> {
-	
-	@Query("SELECT jbor.id FROM job_orders jbor WHERE jbor.sample_order_id = :smdor_id")
-	public String getJobOrderId(@Param("smdor_id") Integer sample_order_id);
 
+	@Query("SELECT jbor.order_no FROM job_orders jbor WHERE jbor.id = :id AND jbor.is_deleted = 0")
+	public String getJobOrderNumber(@Param("id") Integer id);
+
+	@Query("SELECT jbor.order_no FROM job_orders jbor WHERE jbor.is_deleted = 0")
+	public List<String> getAllJobOrderNumber();
 }

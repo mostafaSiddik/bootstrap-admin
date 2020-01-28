@@ -1,6 +1,6 @@
 package com.test.repositories;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -16,6 +16,6 @@ public interface ProductTypeRepository extends JpaRepository<ProductType, Intege
 	public String getProductTypeName(@Param("id") Integer id);
 
 	@Query("SELECT pdtp.name FROM product_types pdtp WHERE pdtp.is_deleted = 0")
-	public ArrayList<String> getAllProductTypeName();
+	public List<String> getAllProductTypeName();
 
 }

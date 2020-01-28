@@ -28,6 +28,13 @@ function deleteSelectedItems() {
 			favorite.push($(this).attr('itemId'));
 		});
 
+		if(favorite.length == 0) {
+			alert("There is no selected item to perform delete action");
+			return;
+		} else if (!confirm('Are you sure you want to delete the selected item(s)?')) {
+			return;
+		}
+
 		del_url = $(this).attr("uri");
 		$.ajax({
 			url : del_url,
@@ -36,14 +43,15 @@ function deleteSelectedItems() {
 			},
 			type : 'POST',
 			error : function(data, textStatus, jqXHR) {
-				if (data.status != "success")
-					alert(data);
+				if (data.status != "success"){
+					console.log(jqXHR);
+				}
 			},
 			success : function(data) {
 				if (data.status == "success") { // if true (1)
-					setTimeout(function() {// wait for 5 secs(2)
+					setTimeout(function() {// wait for 0 secs(2)
 						location.reload(); // then reload the page.(3)
-					}, 5000);
+					}, 0);
 				}
 				console.log(data);
 			}

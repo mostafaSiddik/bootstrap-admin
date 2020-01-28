@@ -19,6 +19,9 @@ public class Unit {
 	private String short_name;
 
 	@Column
+	private String description;
+
+	@Column
 	private Integer created_by;
 
 	@Column
@@ -58,6 +61,14 @@ public class Unit {
 
 	public void setShort_name(String short_name) {
 		this.short_name = short_name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public Integer getCreated_by() {
@@ -110,9 +121,9 @@ public class Unit {
 
 	@Override
 	public String toString() {
-		return "Units [id=" + id + ", name=" + name + ", short_name=" + short_name + ", created_by=" + created_by
-				+ ", created_date=" + created_date + ", modified_by=" + modified_by + ", modified_date=" + modified_date
-				+ ", _key=" + _key + ", is_deleted=" + is_deleted + "]";
+		return "Unit [id=" + id + ", name=" + name + ", short_name=" + short_name + ", description=" + description
+				+ ", created_by=" + created_by + ", created_date=" + created_date + ", modified_by=" + modified_by
+				+ ", modified_date=" + modified_date + ", _key=" + _key + ", is_deleted=" + is_deleted + "]";
 	}
 
 }

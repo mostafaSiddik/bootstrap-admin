@@ -16,6 +16,12 @@ public class ProductType {
 	private String name;
 
 	@Column
+	private String code;
+
+	@Column
+	private String description;
+
+	@Column
 	private Integer created_by;
 
 	@Column
@@ -47,6 +53,22 @@ public class ProductType {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public Integer getCreated_by() {
@@ -99,9 +121,9 @@ public class ProductType {
 
 	@Override
 	public String toString() {
-		return "ProductTypes [id=" + id + ", name=" + name + ", created_by=" + created_by + ", created_date="
-				+ created_date + ", modified_by=" + modified_by + ", modified_date=" + modified_date + ", is_deleted="
-				+ is_deleted + ", _key=" + _key + "]";
+		return "ProductType [id=" + id + ", name=" + name + ", code=" + code + ", description=" + description
+				+ ", created_by=" + created_by + ", created_date=" + created_date + ", modified_by=" + modified_by
+				+ ", modified_date=" + modified_date + ", is_deleted=" + is_deleted + ", _key=" + _key + "]";
 	}
 
 }

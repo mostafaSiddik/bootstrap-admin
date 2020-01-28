@@ -45,12 +45,12 @@ public class JobOrderItem {
 		this.id = id;
 	}
 
-	public Integer getSample_order_id() {
+	public Integer getJob_order_id() {
 		return job_order_id;
 	}
 
-	public void setSample_order_id(Integer sample_order_id) {
-		this.job_order_id = sample_order_id;
+	public void setJob_order_id(Integer job_order_id) {
+		this.job_order_id = job_order_id;
 	}
 
 	public Integer getCategory_id() {
@@ -119,7 +119,7 @@ public class JobOrderItem {
 
 	@Override
 	public String toString() {
-		return "JobOrderItems [id=" + id + ", sample_order_id=" + job_order_id + ", category_id=" + category_id
+		return "JobOrderItem [id=" + id + ", job_order_id=" + job_order_id + ", category_id=" + category_id
 				+ ", product_id=" + product_id + ", size_id=" + size_id + ", color_id=" + color_id + ", style=" + style
 				+ ", quantity=" + quantity + ", unit_price=" + unit_price + ", total_price=" + total_price + "]";
 	}

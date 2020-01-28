@@ -97,7 +97,13 @@
 											<input type="text" class="form-control" placeholder="Enter product type">
 										</div>
 									</div>
-									<div class="col-sm-10">
+									<div class="col-sm-2">
+										<div class="form-group">
+											<label>Code</label>
+											<input type="text" class="form-control" placeholder="Enter product type code">
+										</div>
+									</div>
+									<div class="col-sm-8">
 										<div class="form-group">
 											<label></label>
 											<div align="right">
@@ -119,6 +125,7 @@
 											<thead>
 												<tr>
 													<th>Name</th>
+													<th>Code</th>
 													<th>Description</th>
 													<th>Action</th>
 													<th><input type="checkbox" class="all_item_ckbx"></th>
@@ -127,7 +134,8 @@
 											<tbody>
 												<tr th:each="product_type: ${product_type_list}">
 													<td th:text="${product_type.name}">QC258889</td>
-													<td>Test data</td>
+													<td th:text="${product_type.code}"></td>
+													<td th:text="${product_type.description}"></td>
 													<td>
 														<div class="btn-group">
 															<button type="button" class="btn btn-sm btn-primary">Details</button>
@@ -140,6 +148,7 @@
 											<tfoot>
 												<tr>
 													<th>Name</th>
+													<th>Code</th>
 													<th>Description</th>
 													<th>Action</th>
 													<th></th>

@@ -58,6 +58,9 @@ public class Vendor {
 	private Date modified_date;
 
 	@Column
+	private boolean is_deleted;
+
+	@Column
 	private String _key;
 
 	public int getId() {
@@ -188,6 +191,14 @@ public class Vendor {
 		this.modified_date = modified_date;
 	}
 
+	public boolean isIs_deleted() {
+		return is_deleted;
+	}
+
+	public void setIs_deleted(boolean is_deleted) {
+		this.is_deleted = is_deleted;
+	}
+
 	public String get_key() {
 		return _key;
 	}
@@ -202,7 +213,7 @@ public class Vendor {
 				+ ", company_name=" + company_name + ", code=" + code + ", country=" + country + ", zipcode=" + zipcode
 				+ ", email=" + email + ", phone=" + phone + ", mobile=" + mobile + ", address=" + address
 				+ ", created_by=" + created_by + ", created_date=" + created_date + ", modified_by=" + modified_by
-				+ ", modified_date=" + modified_date + ", _key=" + _key + "]";
+				+ ", modified_date=" + modified_date + ", is_deleted=" + is_deleted + ", _key=" + _key + "]";
 	}
 
 }

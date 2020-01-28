@@ -1,3 +1,15 @@
+[27-Jan-2020]
+* [SH] Added controller and views for Factory and Vendor.
+
+[26-Jan-2020]
+* [SH] Added create, update and delete functionality for Factory, Vendor, JobOrder, JobOrderItem, JobRequisition, JobRequisitionItem, SampleOrder, SampleOrderItem except Integration of views.
+
+[26-Jan-2020]
+* [SH] Added create, update and delete functionality for Product, Color, Size, Unit.
+
+[23-Jan-2020]
+* [SH] Added create, update and delete functionality for Category.
+
 [22-Jan-2020]
 * [SH] Added update and delete functionality for Product Type. 
 

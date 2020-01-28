@@ -13,7 +13,7 @@ public class Factory {
 	private int id;
 
 	@Column
-	private Integer insitute_id;
+	private Integer institute_id;
 
 	@Column
 	private Integer company_id;
@@ -58,6 +58,9 @@ public class Factory {
 	private Date modified_date;
 
 	@Column
+	private boolean is_deleted;
+
+	@Column
 	private String _key;
 
 	public int getId() {
@@ -68,12 +71,12 @@ public class Factory {
 		this.id = id;
 	}
 
-	public Integer getInsitute_id() {
-		return insitute_id;
+	public Integer getInstitute_id() {
+		return institute_id;
 	}
 
-	public void setInsitute_id(Integer insitute_id) {
-		this.insitute_id = insitute_id;
+	public void setInstitute_id(Integer institute_id) {
+		this.institute_id = institute_id;
 	}
 
 	public Integer getCompany_id() {
@@ -188,6 +191,14 @@ public class Factory {
 		this.modified_date = modified_date;
 	}
 
+	public boolean isIs_deleted() {
+		return is_deleted;
+	}
+
+	public void setIs_deleted(boolean is_deleted) {
+		this.is_deleted = is_deleted;
+	}
+
 	public String get_key() {
 		return _key;
 	}
@@ -198,11 +209,11 @@ public class Factory {
 
 	@Override
 	public String toString() {
-		return "Factory [id=" + id + ", insitute_id=" + insitute_id + ", company_id=" + company_id + ", buyer_id="
+		return "Factory [id=" + id + ", institute_id=" + institute_id + ", company_id=" + company_id + ", buyer_id="
 				+ buyer_id + ", name=" + name + ", code=" + code + ", country=" + country + ", zipcode=" + zipcode
 				+ ", email=" + email + ", phone=" + phone + ", mobile=" + mobile + ", address=" + address
 				+ ", created_by=" + created_by + ", created_date=" + created_date + ", modified_by=" + modified_by
-				+ ", modified_date=" + modified_date + ", _key=" + _key + "]";
+				+ ", modified_date=" + modified_date + ", is_deleted=" + is_deleted + ", _key=" + _key + "]";
 	}
 
 }

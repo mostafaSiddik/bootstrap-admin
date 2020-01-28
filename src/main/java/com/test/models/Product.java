@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import org.springframework.lang.NonNull;
+
 @Entity(name = "products")
 public class Product {
 
@@ -13,15 +15,19 @@ public class Product {
 	private int id;
 
 	@Column
+	@NonNull
 	private Integer category_id;
 
 	@Column
+	@NonNull
 	private Integer product_type_id;
 
 	@Column
+	@NonNull
 	private String name;
 
 	@Column
+	@NonNull
 	private String code;
 
 	@Column

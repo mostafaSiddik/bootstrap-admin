@@ -1,7 +1,7 @@
 package com.test.services;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -18,10 +18,11 @@ public interface ProductTypeService {
 
 	public String getProductTypeName(Integer id);
 
-	public ArrayList<String> getAllProductTypeName();
+	public List<String> getAllProductTypeName();
 
 	public ProductType findProductType(Integer id);
 
 	public List<ProductType> findAllProductType();
 
+	public Map<Integer, String> getNameMapWithIdFromProductTypeList(List<ProductType> productTypes);
 }

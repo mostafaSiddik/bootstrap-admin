@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE-edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Employee Info</title>
+
+		<link rel="stylesheet" type="text/css" th:href="@{/resources/additional/css/bootstrap.min.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/resources/additional/css/style.css}" media="all">
+		<link rel="stylesheet" type="text/css" th:href="@{/resources/additional/css/responsive.css}" media="screen">
+    </head>	
+    
+    <body>
+        <div id="breadcrumbBar" class="breadcrumb mb-zero site_nav_links no_bdr_rad clearfix">
+            <div class="col-md-3 col-sm-3 col-xs-2 no_pad">
+                <button class="btn btn-info btn-xs" type="button" onclick="history.back()" title="Go Back"><span class="visible-xs"><i class="fa fa-arrow-left"></i></span><span class="hidden-xs">Back</span></button>
+                <button class="btn btn-info btn-xs" onclick="redirectTo('{{url('clear_view_cache')}}')" title="Refresh" type="button"><span class="visible-xs"><i class="fa fa-refresh"></i></span><span class="hidden-xs">Refresh</span></button>
+            </div>
+            <div class="col-md-6 col-sm-6 hidden-xs text-center">
+                <h2 class="page-title" th:text="${'Employee Info ' + view_mode}"></h2>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-10 no_pad">
+                <ul class="text-right no_mrgn no_pad">
+                    <li><a href="#">Dashboard</a> <i class="fa fa-angle-right"></i></li>
+                    <li><a href="#">Employee Info</a> <i class="fa fa-angle-right"></i></li>
+                    <li>Form</li>
+                </ul>
+            </div>
+        </div>
+               
+       	<div class="outer-line bg-info">
+                   <form th:object="${employeeInfo}" th:action="@{/employee_info/} + ${id != null ? id : ''}" method="post">
+                       <div class="panel panel-primary">
+                       		<div class="panel-heading">
+                           		 <h1 class="panel-title text-center">Personal Information</h1>
+                        	</div>
+                        	
+                        	<div class="panel-body">
+                           		 <div class="mb-10 row clearfix">
+                                	  <div class="col-md-2 col-sm-2">
+                                    	<div  class="clearfix">
+                                       		 <label for="department_id">Department</label>
+                                       		 <select th:field="*{department_id}" class="form-control">
+													<option value="">Select Department</option>
+													<option th:each="department : ${department_list}" th:text="${department.name}" th:value="${department.id}">option 1</option>
+											</select>
+                                        	
+                                    	</div>
+                                    	
+                                    	<div  class="clearfix">
+                                       		 <label  for="designation_id">Designation</label>
+                                        	 <select th:field="*{designation_id}" class="form-control">
+													<option value="">Select Department</option>
+													<option th:each="designation : ${designation_list}" th:text="${designation.title}" th:value="${designation.id}">option 1</option>
+											 </select>
+                                       		 
+                                    	</div>
+                                    
+                                	</div>  
+                    
+                               	 	<div class="col-md-2 col-sm-2">
+    
+                                    	<div  class="clearfix">
+                                        <label  for="first_name">First Name</label>
+                                        <input type="text" class="form-control" id="first_name" th:field="*{first_name}" >
+                                       
+                                    	</div>
+    
+                                    	<div  calss="clearfix">
+                                        <label  for="last_name">Last Name</label>
+                                        <input type="text" class="form-control" id="last_name" th:field="*{last_name}">
+                                        
+                                   		</div>
+    
+                                    	<div  class="clearfix">
+                                        <label  for="surename">Surename</label>
+                                        <input type="text" class="form-control" id="surename" th:field="*{surename}">
+                                       
+                                    	</div>
+    
+                                    	
+                                
+                                   </div>
+                    
+                                	<div class="col-md-2 col-sm-2">
+                                    	<div  class="clearfix">
+                                        <label  for="father_name">Father's Nmae</label>
+                                        <input type="text" class="form-control" id="father_name" th:field="*{father_name}">
+                                        
+                                    	</div>
+                                    
+                                    	<div  class="clearfix">
+                                        <label  for="mother_name">Mother's Nmae</label>
+                                        <input type="text" class="form-control" id="mother_name" th:field="*{mother_name}">
+                                        
+                                    	</div>
+    
+    
+                                    	<div  class="clearfix" style="position: relative">
+                                        	<label  for="date_of_birth">Date of Birth</label>
+                                        	<div class="input-group">
+                                           	 	<input type="text" class="form-control pickdate" id="date_of_birth" th:field="*{date_of_birth}" placeholder="dd-mm-yyyy" readonly required>
+                                           	 	<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                       		</div>
+                                        
+                                    	</div>
+                                    
+                               	    </div>
+                    
+                                	<div class="col-md-2 col-sm-2">
+                                    	<div  class="clearfix">
+                                        <label  for="nationality">Nationality</label>
+                                        <input type="text" class="form-control" id="nationality" th:field="*{nationality}">
+                                        
+                                    	</div>
+    
+                                   		<div  class="clearfix">
+                                        <label  for="religion">Religion</label>
+                                        <input type="text" class="form-control" id="religion" th:field="*{religion}">
+                                        
+                                    	</div>
+    
+                                    	<div  class="clearfix">
+                                        <label  for="marital_status">Marital Status</label>
+                                        <input type="text" class="form-control" id="marital_status" th:field="*{marital_status}">
+                                        
+                                   		</div>
+    
+                                    	<div  class="clearfix">
+                                        <label  for="spouse">Spouse</label>
+                                        <input type="text" class="form-control" id="spouse" th:field="*{spouse}">
+                                        
+                                    	</div>
+                                    
+                                    </div>
+    
+                                	<div class="col-md-2 col-sm-2">
+                                   		<div  class="clearfix">
+                                        <label  for="email">Email</label>
+                                        <input type="text" class="form-control" id="email" th:field="*{email}">
+                                        
+                                    	</div>
+    
+                                    	<div  class="clearfix">
+                                        <label  for="phone">Phone</label>
+                                        <input type="text" class="form-control" id="phone" th:field="*{phone}">
+                                        
+                                    	</div>
+    
+                                    	<div  class="clearfix">
+                                        <label  for="driving_license">Driving License</label>
+                                        <input type="text" class="form-control" id="driving_license" th:field="*{driving_license}">
+                                        
+                                    	</div>
+    
+                                    	<div  class="clearfix">
+                                        <label  for="quota">Quota</label>
+                                        <input type="text" class="form-control" id="quota" th:field="*{quota}">
+                                        
+                                    	</div>
+                                    
+                                	</div>
+    
+                                	<div class="col-md-2 col-sm-2">
+                                    	<div  class"clearfix">
+                                        	<label  for="national_id">National ID NO</label>
+                                        	<input type="text" class="form-control" id="national_id" th:field="*{national_id}">
+                                        
+                                    	</div>
+    
+                                    	<div  class="clearfix">
+                                        	<label  for="blood_group">Blood Group</label>
+                                        	<input type="text" class="form-control" id="blood_group" th:field="*{blood_group}">
+                                        
+                                    	</div>
+    
+                                    	<div  class="clearfix">
+                                        	<label  for="passport_no">Passport NO</label>
+                                        	<input type="text" class="form-control" id="passport_no" th:field="*{passport_no}">
+                                        
+                                    	</div>
+                                    
+                                    	<div  class="clearfix" style="position: relative">
+                                        	<label  for="date_of_birth">Joining Date</label>
+                                        	<div class="input-group">
+                                            	<input type="text" class="form-control pickdate" id="joining_date" th:field="*{joining_date}" placeholder="dd-mm-yyyy" readonly required>
+                                            	<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                        	</div>
+                                        
+                                    	</div>
+    
+                                   </div>
+                                   
+                                   <div class="pb-10 col-md-2 col-sm-2 no_pad" style="margin: 10px 10px 0px 0px; ">
+                                        <button type="submit" class="btn btn-primary btn-block">Save</button>
+                                   </div>
+                
+                                   <div class="pb-10 col-md-2 col-sm-2 no_pad" style="margin-top: 10px;">
+                                        <button type="button" class="btn btn-danger btn-block" onclick="redirectTo('{{url('clear_view_cache')}}')">Reset</button>
+                                   </div>  
+                            </div>
+                        </div>
+
+                    </div>
+                  </form>
+               </div>
+               
+
+        </div>
+       
+               
+
+        <script th:src="@{/resources/additional/js/jquery.js}"></script>
+		<script th:src="@{/resources/additional/js/bootstrap.min.js}"></script>
+		<script th:src="@{/resources/js/legend.script.js}"></script>
+    </body>
+
+</html>

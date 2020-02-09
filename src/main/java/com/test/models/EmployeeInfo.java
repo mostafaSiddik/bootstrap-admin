@@ -98,6 +98,9 @@ public class EmployeeInfo {
 
 	@Column
 	private String _key;
+	
+	@Column
+	private boolean is_deleted;
 
 	public int getId() {
 		return id;
@@ -338,6 +341,16 @@ public class EmployeeInfo {
 	public void set_key(String _key) {
 		this._key = _key;
 	}
+	
+	
+
+	public boolean isIs_deleted() {
+		return is_deleted;
+	}
+
+	public void setIs_deleted(boolean is_deleted) {
+		this.is_deleted = is_deleted;
+	}
 
 	@Override
 	public String toString() {
@@ -350,7 +363,8 @@ public class EmployeeInfo {
 				+ quota + ", national_id_no=" + national_id_no + ", blood_group=" + blood_group + ", passport_no="
 				+ passport_no + ", image=" + image + ", joining_date=" + joining_date + ", created_by=" + created_by
 				+ ", created_date=" + created_date + ", modified_by=" + modified_by + ", modified_date=" + modified_date
-				+ ", _key=" + _key + "]";
+				+ ", _key=" + _key + ", is_deleted=" + is_deleted + "]";
 	}
 
+	
 }

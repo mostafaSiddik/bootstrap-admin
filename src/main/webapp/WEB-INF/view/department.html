@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE-edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Department Entry</title>
+
+		<link rel="stylesheet" type="text/css" th:href="@{/resources/additional/css/bootstrap.min.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/resources/additional/css/style.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/resources/additional/css/responsive.css}">
+    </head>	
+    
+    <body>
+        <div id="breadcrumbBar" class="breadcrumb mb-zero site_nav_links no_bdr_rad clearfix">
+            <div class="col-md-3 col-sm-3 col-xs-2 no_pad">
+                <button class="btn btn-info btn-xs" type="button" onclick="history.back()" title="Go Back"><span class="visible-xs"><i class="fa fa-arrow-left"></i></span><span class="hidden-xs">Back</span></button>
+                <button class="btn btn-info btn-xs" onclick="redirectTo('{{url('clear_view_cache')}}')" title="Refresh" type="button"><span class="visible-xs"><i class="fa fa-refresh"></i></span><span class="hidden-xs">Refresh</span></button>
+            </div>
+            <div class="col-md-6 col-sm-6 hidden-xs text-center">
+                <h2 class="page-title" th:text="${'Department ' + view_mode}"></h2>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-10 no_pad">
+                <ul class="text-right no_mrgn no_pad">
+                    <li><a href="#">Dashboard</a> <i class="fa fa-angle-right"></i></li>
+                    <li><a href="#">Department</a> <i class="fa fa-angle-right"></i></li>
+                    <li>Form</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="clearfix col-md-8 col-md-offset-2">
+            <div class="h-100 outer-line bg-info">
+                 <form role="form" th:object="${department}" th:action="@{/department/} + ${id != null ? id : ''}" method="post">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                             <h1 class="panel-title text-center">Create Department</h1>
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="mb-10 row clearfix">
+                                <div class="col-md-6 col-sm-2 col-md-offset-3">
+                                    <div  class="clearfix">
+                                        <label class="" for="name">Name</label>
+                                        <input type="text" class="form-control" id="name" th:field="*{name}" placeholder="Enter the name of department" >
+                                        <small class="text-danger"></small>
+                                    </div>
+    
+                                    <div  classs="clearfix">
+                                        <label class="" for="phone">Phone</label>
+                                        <input type="text" class="form-control" id="phone" th:field="*{phone}">
+                                        <small class="text-danger"></small>
+                                    </div>
+    
+                                    <div  class="clearfix">
+                                        <label class="" for="mobile">Mobile</label>
+                                        <input type="text" class="form-control" id="mobile" th:field="*{mobile}">
+                                        <small class="text-danger"></small>
+                                    </div>
+
+                                    <div  classs="clearfix">
+                                        <label class="" for="email">Email</label>
+                                        <input type="text" class="form-control" id="email" th:field="*{email}">
+                                        <small class="text-danger"></small>
+                                    </div>
+                                    
+
+                                    <div class="pb-10 col-md-2 col-sm-2 no_pad" style="margin: 10px 10px 0px 0px; ">
+                                        <button type="submit" class="btn btn-primary btn-block">Save</button>
+                                    </div>
+                
+                                    <div class="pb-10 col-md-2 col-sm-2 no_pad" style="margin-top: 10px;">
+                                        <button type="button" class="btn btn-danger btn-block" onclick="redirectTo('{{url('clear_view_cache')}}')">Reset</button>
+                                    </div>  
+                                    
+                                </div>      
+                                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                 </form>   
+            </div>  
+        </div>        
+
+       	<script th:src="@{/resources/additional/js/jquery.js}"></script>
+		<script th:src="@{/resources/additional/js/bootstrap.min.js}" /></script>
+		<script th:src="@{/resources/js/legend.script.js}" /></script>
+    </body>
+
+</html>
+

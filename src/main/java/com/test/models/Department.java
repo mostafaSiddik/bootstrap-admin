@@ -41,6 +41,9 @@ public class Department {
 
 	@Column
 	private Date modified_date;
+	
+	@Column
+	private boolean is_deleted;
 
 	@Column
 	private String _key;
@@ -132,6 +135,16 @@ public class Department {
 	public void setModified_date(Date modified_date) {
 		this.modified_date = modified_date;
 	}
+	
+	
+
+	public boolean isIs_deleted() {
+		return is_deleted;
+	}
+
+	public void setIs_deleted(boolean is_deleted) {
+		this.is_deleted = is_deleted;
+	}
 
 	public String get_key() {
 		return _key;
@@ -143,10 +156,12 @@ public class Department {
 
 	@Override
 	public String toString() {
-		return "Departments [id=" + id + ", company_id=" + company_id + ", branch_id=" + branch_id + ", name=" + name
+		return "Department [id=" + id + ", company_id=" + company_id + ", branch_id=" + branch_id + ", name=" + name
 				+ ", phone=" + phone + ", mobile=" + mobile + ", email=" + email + ", created_by=" + created_by
 				+ ", created_date=" + created_date + ", modified_by=" + modified_by + ", modified_date=" + modified_date
-				+ ", _key=" + _key + "]";
+				+ ", is_deleted=" + is_deleted + ", _key=" + _key + "]";
 	}
+
+
 
 }
